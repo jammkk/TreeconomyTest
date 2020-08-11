@@ -12,6 +12,7 @@ module.exports= function({
     router.get('/',productsController.getAll)
     router.patch('/:_id',productsController.update)
     router.delete('/:productsId',productsController.delete)
+    router.post('/',productsController.create)
 
     return router
 }

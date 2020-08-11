@@ -30,12 +30,7 @@ class BaseService{
     async create(entity){ 
         
         let newEntity=null
-        try{
-             newEntity= await this.repository.create(entity)
-        }catch(err){
-            console.error(err.message)
-        }
-        
+        newEntity= await this.repository.create(entity)
         return newEntity  
     }
     async delete(id){

@@ -34,6 +34,11 @@ class productsController{
         return res.send(products)
     }
 
+    async create(req, res){
+        const {body} = req
+        const newP= await _productsService.create(body)
+        return res.status(200).send(newP);
+     }
     
 }
 module.exports=productsController

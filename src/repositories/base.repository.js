@@ -9,9 +9,14 @@ class BaseRepository{
     }
     async getAll(){
 
+        let colection = await this.model.find();
+
         let data ={
-          coleccion:  await this.model.find(),
-          total:await this.model.find().count()
+          colection ,
+          total:colection.reduce((prev,current)=>{
+                return prev+current.value;
+          },0
+          )
         }
 
         return data
@@ -19,13 +24,8 @@ class BaseRepository{
     async create(entity){
      
         let ca=null
-        try{
-        
-         ca=await this.model.create(entity)
-      
-        }catch(err){
-            console.error(err)
-        }  
+        ca=await this.model.create(entity)
+        console.error(err)
         return ca
     }
     
