@@ -25,7 +25,6 @@ class BaseRepository{
      
         let ca=null
         ca=await this.model.create(entity)
-        console.error(err)
         return ca
     }
     
@@ -36,7 +35,7 @@ class BaseRepository{
     }
     async delete(id,entity){
       
-        return await this.model.findByIdAndUpdate(id,{active:false},{new:true})
+        return await this.model.findByIdAndDelete(id);
     }
 }
 

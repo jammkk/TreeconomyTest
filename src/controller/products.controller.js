@@ -20,18 +20,12 @@ class productsController{
         return res.send(products)
     }
     async update(req,res){
-        const body=req.body
-        const {productsId}=body
-        const products = await _productsService.update(body,productsId)
-        return res.send(products)
-    }
-
-    async update(req,res){
-     
-        const body=req.body
-        const productsId=req.params._id
-        const products = await _productsService.update(body,productsId)
-        return res.send(products)
+        const body=req.body;
+        const {productsId}=req.params;
+        console.log(productsId);
+        
+        const products = await _productsService.update(body,productsId);
+        return res.send(products);
     }
 
     async create(req, res){
