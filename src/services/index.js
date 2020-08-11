@@ -1,3 +1,3 @@
 module.exports = {
-    UserService:require('./products.service'),
+    productsService:require('./products.service'),
 }

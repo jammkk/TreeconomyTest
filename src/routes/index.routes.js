@@ -1,3 +1,3 @@
 module.exports = {
-    ProductsRoutes:require('./products.routes'),
+    productsRoutes:require('./products.routes'),
 }
