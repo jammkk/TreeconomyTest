@@ -1,3 +1,3 @@
 module.exports={
-    UserRepository:require('./products.repository'),
+    productsRepository:require('./products.repository'),
 }

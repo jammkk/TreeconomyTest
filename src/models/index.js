@@ -1,3 +1,3 @@
 module.exports={
-    UserModel:require('./products.models'),
+    productsModel:require('./products.models'),
 }

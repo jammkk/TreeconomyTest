@@ -6,7 +6,7 @@ const {ErrorMidleware,NotFoundMiddleware} = require('../middlewares')
 require('express-async-errors')
 
 //Inyección de dependencias con User,Auth y las demás rutas
-module.exports =function({UserRoutes,AuthRoutes,}){
+module.exports =function({productsRoutes,}){
     const router = express.Router()
     const apiRoutes =  express.Router()
 //Uso de los middlewares importados cors(cros-domain), helmet(seguridad) compressión (comprimir las peticiones http) y static para acceder a recursos del servidor
@@ -15,12 +15,10 @@ module.exports =function({UserRoutes,AuthRoutes,}){
     .use(cors())
     .use(helmet())
     .use(compression())
-    .use(express.static(__dirname+"../public"))
 
-    apiRoutes.use('/auth',AuthRoutes)
-    apiRoutes.use('/user',UserRoutes)
+    apiRoutes.use('/products',productsRoutes)
 
-    router.use('/v1/api',apiRoutes)
+    router.use('',apiRoutes)
  //Uso de los middlewares propios
     router.use(ErrorMidleware)
     router.use(NotFoundMiddleware)
